@@ -11,10 +11,22 @@ This Python script provides a structured approach for managing access tokens and
 
 ### TokenManager
 
+TokenManager can be used to manage your Strava API access token.
+
+The first time you run the script, it will open a local server for user authorization to obtain access token and refresh token.
+
+After the first run, the script will automatically refresh your access token when needed.
+
+TokenManager provides the following features:
+
 - **Check Token Expiry**: Easily verify if your access token has expired.
 - **Refresh Token**: Automatically refresh your access token when needed.
 - **Save and Load Token Data**: Save your token data to a file and load it back when required.
 - **User Authorization for Token**: Opens a local server for user authorization to obtain access token.
+
+#### About Strava API Token
+
+read more about Strava API token [here](https://developers.strava.com/docs/authentication/)
 
 ### ActivityUploader
 
@@ -52,7 +64,7 @@ token_manager = TokenManager()
 uploader = ActivityUploader(token_manager.access_token)
 ```
 
-1. Use the upload_activity method of the ActivityUploader class to upload activities to Strava:
+3. Use the upload_activity method of the ActivityUploader class to upload activities to Strava:
 
 ```python
 uploader.upload_activity(file_path, data_type, activity_type, name, description)
