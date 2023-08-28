@@ -1,4 +1,3 @@
-import requests
 from stravalib.client import Client
 import json
 import os
